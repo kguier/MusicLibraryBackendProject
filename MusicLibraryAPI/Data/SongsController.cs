@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MusicLibraryAPI.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -49,9 +50,15 @@ namespace MusicLibraryAPI.Data
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Song song)
         {
-            _context.Songs.Update(song);
+            var updatedSong = _context.Songs.Find(id);
+            updatedSong.Title = song.Title;
+            updatedSong.Artist = song.Artist;
+            updatedSong.Album = song.Album;
+            updatedSong.ReleaseDate = song.ReleaseDate;
+            updatedSong.Genre = song.Genre;
+            _context.Songs.Update(updatedSong);
             _context.SaveChanges();
-            return StatusCode(200, song);
+            return StatusCode(200, updatedSong);
         }
 
         // DELETE api/Songs/5
