@@ -22,7 +22,7 @@ namespace MusicLibraryAPI.Data
                     Title = "Waste My Time",
                     Artist = "The Crystal Casino Band",
                     Album = "Not About You",
-                    ReleaseDate = 2021,
+                    ReleaseDate = new DateTime(2021,01,29),
                     Genre = "Alternative"
                 },
                 new Song
@@ -31,7 +31,7 @@ namespace MusicLibraryAPI.Data
                     Title = "Francesca",
                     Artist = "Hozier",
                     Album = "Unreal Earth",
-                    ReleaseDate = 2023,
+                    ReleaseDate = new DateTime(2023,05,19),
                     Genre = "Alternative/Indie"
                 },
                  new Song
@@ -40,7 +40,7 @@ namespace MusicLibraryAPI.Data
                      Title = "Nothing Matters",
                      Artist = "The Last Dinner Party",
                      Album = "Nothing Matters",
-                     ReleaseDate = 2023,
+                     ReleaseDate = new DateTime(2023,04,19),
                      Genre = "Alternative/Indie"
 
                  },
@@ -50,7 +50,7 @@ namespace MusicLibraryAPI.Data
                      Title = "Me and the Devil",
                      Artist = "Soap&Skin",
                      Album = "Sugarbread",
-                     ReleaseDate = 2013,
+                     ReleaseDate = new DateTime(2013,03,11),
                      Genre = "Alternative/Indie",
                  },
                  new Song
@@ -59,7 +59,7 @@ namespace MusicLibraryAPI.Data
                      Title = "I Know Places",
                      Artist = "Taylor Swift",
                      Album = "1989",
-                     ReleaseDate = 2014,
+                     ReleaseDate = new DateTime(2014,10,27),
                      Genre = "Electropop",
                  });
         }
