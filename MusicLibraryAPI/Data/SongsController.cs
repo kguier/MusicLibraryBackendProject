@@ -26,9 +26,14 @@ namespace MusicLibraryAPI.Data
 
         // GET api/Songs/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            var song = _context.Songs.Find(id);
+            if(song == null)
+            {
+                return NotFound();
+            }
+            return StatusCode(200, song);
         }
 
         // POST api/Songs
