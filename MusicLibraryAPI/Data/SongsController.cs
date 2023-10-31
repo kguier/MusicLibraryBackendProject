@@ -49,14 +49,19 @@ namespace MusicLibraryAPI.Data
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Song song)
         {
-
+            _context.Songs.Update(song);
+            _context.SaveChanges();
             return StatusCode(200, song);
         }
 
         // DELETE api/Songs/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            var song = _context.Songs.Find(id);
+            _context.Songs.Remove(song);
+            _context.SaveChanges();
+            return NoContent();
         }
     }
 }
